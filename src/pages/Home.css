@@ -1,0 +1,147 @@
+.content {
+  display: flex;
+  justify-content: space-around;
+}
+.content h4{
+  margin-bottom: 0.563rem;
+}
+
+/* Start Css form cards payment*/
+.info-card .card-flags-content {
+  text-align: center;
+  margin-top: 1.875rem;
+}
+
+.info-card .card-flags-content img{
+  margin-right: 0.819rem;
+}
+
+.info-card .card-flags-content p {
+  display: flex;
+  align-items: center;
+  margin-top: .868rem;
+  font-size: 0.625rem;
+  line-height: 0.813rem;
+  color: #E1DEE8;
+  letter-spacing: -0.02em;
+  justify-content: center;
+}
+
+.info-card .card-flags-content p img {
+  margin-left: 0.438rem;
+  margin-right: 0;
+}
+
+form {
+  margin-top: 1.875rem;
+}
+
+form .checkout-information .input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.875rem;
+  border-bottom: 1px solid #F4F3F6;
+  padding-bottom: 0.625rem;
+}
+
+form .checkout-information .input-group label {
+  font-size: 0.750rem;
+  line-height: 1rem;
+  color: #666173;
+  margin-bottom: 0.250rem;
+}
+
+form .checkout-information .input-group input, 
+form .checkout-information .input-group select{
+  font-size: 1rem;
+  line-height: 1.313rem;
+  letter-spacing: -0.02em;
+  color: #C9C5D4;
+  border: none;
+  min-width: 330px;
+}
+
+form .button-checkout{
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  background: #191847;
+  border-radius: 1.563rem;
+  padding: 1.125rem 3.75rem;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* End css for cards payment */
+
+/* Info plan css */
+
+.info-your-plan > p {
+  border: 1px solid #F4F3F6;
+  border-radius: 12px;
+  font-size: 0.750rem;
+  line-height: 1rem;
+  padding: 0.250rem 0.750rem;
+  margin-bottom: 1.875rem;
+}
+
+.info-your-plan .content-plan .box-option-plan {
+  display: flex;
+  position: relative;
+  align-items: center;
+  border: 1px solid #191847;
+  border-radius: 15px;
+  padding: 1.250rem;
+  min-width: 320px;
+  justify-content: space-between;
+  margin-bottom: 0.750rem;
+}
+.info-your-plan .content-plan .box-option-plan .info-plan{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 0.250rem;
+}
+
+.info-your-plan .content-plan .box-option-plan .info-plan strong {
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+}
+
+.info-your-plan .content-plan .box-option-plan .info-plan p {
+  font-size: 0.750rem;
+  line-height: 0.813rem;
+}
+
+.info-your-plan .content-plan .box-option-plan .info-plan .installment-price {
+  color: #F5850B;
+  letter-spacing: -0.02em;
+  font-size: 0.625rem;
+  line-height: 0.813rem;
+}
+
+.info-your-plan input {
+  height: 1rem;
+  width: 1rem;
+  border: 2px solid #C9C5D4;
+}
+
+/* .info-your-plan input:checked::after {
+  content: "";
+  border-radius: 50%;
+  display: block;
+  height: 0.250rem;
+  transition: all .3s ease;
+  width: 0.250rem;
+  background: #191847;
+} */
+.info-your-plan .info-plan::before ~ input:checked {
+  content: "";
+  border-radius: 50%;
+  display: block;
+  height: 0.250rem;
+  transition: all .3s ease;
+  width: 0.250rem;
+  background: #191847;
+}

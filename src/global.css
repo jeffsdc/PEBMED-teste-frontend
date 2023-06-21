@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothin: grayscale;
+  text-rendering: optimizeLegibility;
+
+  font-family: 'DM Sans', sans-serif;
+  color: #151516;
+}
+
+.container {
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+h4 {
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
