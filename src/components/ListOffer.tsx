@@ -1,18 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { fetchOffers } from "../api/Api";
+import React from "react";
 
-const ListOffer = () => {
-  const [offers, setOffers] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetchOffers();
-      setOffers(data);
-    };
-
-    fetchData();
-  }, []);
-
+const ListOffer = ({ offer, selectedOffer }) => {
   function CurrencyConverter({ value }) {
     const formattedValue = value.toLocaleString("pt-BR", {
       style: "currency",
@@ -24,40 +12,43 @@ const ListOffer = () => {
 
   return (
     <div className="content-plan">
-      {offers.map((offer) => (
-        <div className="plan-offer" key={offer.id}>
-          <label htmlFor="inCashPlan" className="box-option-plan">
-            <div className="info-plan">
-              <strong>Anual | {offer.description}</strong>
-              <p>
-                De <CurrencyConverter value={offer.fullPrice} /> | Por{" "}
+      <div className="plan-offer">
+        <label htmlFor="inCashPlan" className="box-option-plan">
+          <div className="info-plan">
+            <strong>Anual | {offer.description}</strong>
+            <p>
+              De <CurrencyConverter value={offer.fullPrice} /> | Por{" "}
+              <CurrencyConverter
+                value={offer.fullPrice - offer.discountAmmount}
+              />
+              <span className="discount-percentage">
+                -{offer.discountPercentage * 100}%
+              </span>
+            </p>
+            {offer.installments > 1 ? (
+              <p className="installment-price">
+                {offer.installments}x de{" "}
                 <CurrencyConverter
-                  value={offer.fullPrice - offer.discountAmmount}
+                  value={
+                    (offer.fullPrice - offer.discountAmmount) /
+                    offer.installments
+                  }
                 />
+                /mês
               </p>
-              {offer.installments > 1 ? (
-                <p className="installment-price">
-                  {offer.installments}x de{" "}
-                  <CurrencyConverter
-                    value={
-                      (offer.fullPrice - offer.discountAmmount) /
-                      offer.installments
-                    }
-                  />
-                  /mês
-                </p>
-              ) : null}
-            </div>
-            <input
-              type="radio"
-              name="selectPlan"
-              id="inCashPlan"
-              value="43690"
-              className="fakeInput"
-            />
-          </label>
-        </div>
-      ))}
+            ) : null}
+          </div>
+          <input
+            type="radio"
+            name="selectPlan"
+            id="inCashPlan"
+            value={offer.id}
+            className="fakeInput"
+            onChange={() => selectedOffer(offer)}
+            required
+          />
+        </label>
+      </div>
     </div>
   );
 };

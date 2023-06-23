@@ -21,3 +21,9 @@ h4 {
   letter-spacing: -0.02em;
   font-weight: 400;
 }
+
+@media (max-width:768px) {
+  .container {
+    padding: 0 1rem;
+  }
+}

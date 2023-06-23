@@ -1,8 +1,9 @@
 .content {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
 }
-.content h4{
+
+.content h4 {
   margin-bottom: 0.563rem;
 }
 
@@ -12,7 +13,7 @@
   margin-top: 1.875rem;
 }
 
-.info-card .card-flags-content img{
+.info-card .card-flags-content img {
   margin-right: 0.819rem;
 }
 
@@ -33,6 +34,12 @@
 }
 
 form {
+  margin-top: 2.50rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+form .checkout-information{
   margin-top: 1.875rem;
 }
 
@@ -52,13 +59,17 @@ form .checkout-information .input-group label {
 }
 
 form .checkout-information .input-group input, 
-form .checkout-information .input-group select{
+form .checkout-information .input-group select {
   font-size: 1rem;
   line-height: 1.313rem;
   letter-spacing: -0.02em;
-  color: #C9C5D4;
   border: none;
   min-width: 330px;
+  text-transform: capitalize;
+}
+
+form .checkout-information .input-group input::placeholder {
+  color: #C9C5D4;
 }
 
 form .button-checkout{
@@ -77,13 +88,14 @@ form .button-checkout{
 
 /* Info plan css */
 
-.info-your-plan > p {
+.info-your-plan #email_user {
   border: 1px solid #F4F3F6;
   border-radius: 12px;
   font-size: 0.750rem;
   line-height: 1rem;
   padding: 0.250rem 0.750rem;
   margin-bottom: 1.875rem;
+  display: inline-block;
 }
 
 .info-your-plan .content-plan .box-option-plan {
@@ -97,7 +109,8 @@ form .button-checkout{
   justify-content: space-between;
   margin-bottom: 0.750rem;
 }
-.info-your-plan .content-plan .box-option-plan .info-plan{
+
+.info-your-plan .content-plan .box-option-plan .info-plan {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -112,6 +125,23 @@ form .button-checkout{
 .info-your-plan .content-plan .box-option-plan .info-plan p {
   font-size: 0.750rem;
   line-height: 0.813rem;
+  display: flex;
+  align-items: center;
+  gap: 0.250rem;
+}
+
+.info-your-plan .content-plan .box-option-plan .info-plan p .discount-percentage {
+  font-size: 0.625rem;
+  line-height: 0.625rem;
+  background: #F5850B;
+  border-radius: 9px;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  padding: 0.250rem; 
+  text-align: center;
+  margin-left: 0.500rem;
+  width: 2.5rem;
+  height: 1rem;
 }
 
 .info-your-plan .content-plan .box-option-plan .info-plan .installment-price {
@@ -127,15 +157,6 @@ form .button-checkout{
   border: 2px solid #C9C5D4;
 }
 
-/* .info-your-plan input:checked::after {
-  content: "";
-  border-radius: 50%;
-  display: block;
-  height: 0.250rem;
-  transition: all .3s ease;
-  width: 0.250rem;
-  background: #191847;
-} */
 .info-your-plan .info-plan::before ~ input:checked {
   content: "";
   border-radius: 50%;
@@ -144,4 +165,18 @@ form .button-checkout{
   transition: all .3s ease;
   width: 0.250rem;
   background: #191847;
+}
+
+@media (max-width:768px) {
+  form {
+    flex-direction: column;
+    justify-content: normal;
+  }
+  .info-your-plan {
+    order: 1;
+    margin-bottom: 1.875rem;
+  }
+  .info-card {
+    order: 2;
+  }
 }
