@@ -12,9 +12,15 @@ Install dependencies
 npm install
 ```
 
-Running local  
-`npm run dev`  
-`http://127.0.0.1:5173/`
+Running local 
+```bash
+npm run dev
+```
+```bash
+http://127.0.0.1:5173/
+```
 
 Build production  
-`npm run build`
+```bash
+npm run build
+```
